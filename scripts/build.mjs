@@ -42,9 +42,6 @@ if (isProd) {
 } else {
   const ctx = await esbuild.context(esbuildOpts)
   await ctx.watch()
-  const { hosts, port } = await ctx.serve()
-  console.log(`Running on:`)
-  hosts.forEach((host) => {
-    console.log(`http://${host}:${port}`)
-  })
+  console.log('Watching for changes...')
+  console.log('Use a static file server to view the application (e.g., npx serve dist)')
 }
